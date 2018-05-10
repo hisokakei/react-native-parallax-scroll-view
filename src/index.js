@@ -279,9 +279,8 @@ class ParallaxScrollView extends Component {
 		const { scrollY } = this
 		const p = pivotPoint(parallaxHeaderHeight, stickyHeaderHeight)
 		return (
-			<View style={styles.parallaxHeaderContainer} pointerEvents='box-none'>
+			<View style={styles.parallaxHeaderContainer}>
 				<Animated.View
-					pointerEvents='box-none'
 					style={[
 						styles.parallaxHeader,
 						{
@@ -296,7 +295,7 @@ class ParallaxScrollView extends Component {
 						}
 					]}
 				>
-					<View style={{ height: parallaxHeaderHeight }} pointerEvents='box-none'>
+					<View style={{ height: parallaxHeaderHeight }}>
 						{renderForeground()}
 					</View>
 				</Animated.View>
@@ -358,6 +357,7 @@ class ParallaxScrollView extends Component {
 			const p = pivotPoint(parallaxHeaderHeight, stickyHeaderHeight)
 			return (
 				<View
+					pointerEvents='box-none'
 					style={[
 						styles.stickyHeader,
 						{
@@ -368,6 +368,7 @@ class ParallaxScrollView extends Component {
 				>
 					{renderStickyHeader
 						? <Animated.View
+								pointerEvents='box-none'
 								style={{
 									backgroundColor: backgroundColor,
 									height: stickyHeaderHeight,
@@ -379,6 +380,7 @@ class ParallaxScrollView extends Component {
 								}}
 							>
 								<Animated.View
+									pointerEvents='box-none'
 									style={{
 										transform: [
 											{
